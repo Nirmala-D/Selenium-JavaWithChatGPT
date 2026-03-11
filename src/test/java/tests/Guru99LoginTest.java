@@ -1,53 +1,27 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Guru99LoginTest {
-	WebDriver driver;
+import base.BaseTest;
+import pages.LoginPage;
+import utils.ConfigReader;
 
-	@BeforeTest
-	public void setup() {
+public class Guru99LoginTest extends BaseTest {
+	
+	 @Test
+	 public void VerifyLogin() {
+	ConfigReader config = new ConfigReader();
 
-		// Launch Firefox Browser
-		driver = new FirefoxDriver();
+    LoginPage loginPage = new LoginPage(driver);
 
-		// Open the URL
-		driver.get("http://www.demo.guru99.com/V4/");
+    loginPage.login(
+            config.getUsername(),
+            config.getPassword());
 
-		// Maximize browser
-		driver.manage().window().maximize();
-	}
+    String title = driver.getTitle();
 
-	@Test
-	public void loginTest() {
-
-		// Enter UserId
-		driver.findElement(By.name("uid")).sendKeys("mngr654832");
-
-		// Enter Password
-		driver.findElement(By.name("password")).sendKeys("zAsYreg");
-
-		// Click Login button
-		driver.findElement(By.name("btnLogin")).click();
-
-		// Assertion to verify login success
-		String expectedTitle = "Guru99 Bank Manager HomePage";
-		String actualTitle = driver.getTitle();
-
-		Assert.assertEquals(actualTitle, expectedTitle, "Login Failed!");
-	}
-
-	@AfterTest
-	public void tearDown() {
-
-		// Close browser
-		driver.quit();
-	}
+    Assert.assertEquals(title, "Guru99 Bank Manager HomePage");
+}
 
 }
