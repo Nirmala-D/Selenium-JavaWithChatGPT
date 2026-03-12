@@ -1,0 +1,24 @@
+{
+  "loginData": [
+    {
+      "userId": "mngr654832",
+      "password": "zAsYreg",
+      "expectedResult": "login success"
+    },
+    {
+      "userId": "mngr",
+      "password": "zAsYreg",
+      "expectedResult": "invalid userId"
+    },
+    {
+      "userId": "mngr654832",
+      "password": "zAs",
+      "expectedResult": "invalid password"
+    },
+    {
+      "userId": "mngrs",
+      "password": "zasy",
+      "expectedResult": "invalid userId and password"
+    }
+  ]
+}
