@@ -18,7 +18,7 @@
 	<test name="Login Test 2">
 
 		<classes>
-			<class name="tests.Guru99LoginTest" />
+			<class name="tests.LoginTestWithDataProvider" />
 		</classes>
 
 	</test>
