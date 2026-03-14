@@ -26,7 +26,7 @@ public class Guru99LoginTest extends BaseTest {
 
     String title = driver.getTitle();
 
-    Assert.assertEquals(title, "Guru99 Bank Manager HomePage");
+    Assert.assertEquals(title, "Guru99 Bank Manager Home");
 }
 
 }
