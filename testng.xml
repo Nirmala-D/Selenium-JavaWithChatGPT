@@ -2,14 +2,19 @@
 
 <suite name="Guru99LoginTestSuite">
 
-	<listeners>
-		<listener class-name="utils.RetryListener" />
-	</listeners>
-	<test name="LoginTests">
-		<classes>
-			<class name="tests.Guru99LoginTest" />
-		</classes>
+    <listeners>
 
-	</test>
+        <listener class-name="utils.RetryListener"/>
+        <listener class-name="utils.TestListener"/>
+
+    </listeners>
+
+    <test name="LoginTests">
+
+        <classes>
+            <class name="tests.Guru99LoginTest"/>
+        </classes>
+
+    </test>
 
 </suite>
