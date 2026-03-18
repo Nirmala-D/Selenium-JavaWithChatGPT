@@ -8,13 +8,22 @@
         <listener class-name="utils.TestListener"/>
 
     </listeners>
+    
+    <test name="RegisterTests">
+
+        <classes>
+            <class name="tests.RegisterTest"/>
+        </classes>
+        
+    </test>
+
 
     <test name="LoginTests">
 
         <classes>
             <class name="tests.Guru99LoginTest"/>
         </classes>
-
+        
     </test>
 
 </suite>
